@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sketch</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2213%22 fill=%22none%22 stroke=%22%231b1a17%22 stroke-width=%222.2%22/%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%225%22 fill=%22%231b1a17%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="site.css?v=2">
+<script src="config.js?v=1"></script>
+</head>
+<body class="sketch">
+<div class="sk">
+  <nav class="sk-nav">
+    <a class="home" href="index.html" title="All sketches (Esc)">← <span id="home-label">All sketches</span></a>
+    <div class="title"><h1 id="sk-title">…</h1><div class="pos" id="sk-pos"></div></div>
+    <div class="navbtns">
+      <a class="btn" id="prev" href="#" title="Previous sketch (←)">‹ <span class="label-text">Prev</span></a>
+      <a class="btn" id="next" href="#" title="Next sketch (→)"><span class="label-text">Next</span> ›</a>
+    </div>
+  </nav>
+
+  <div class="sk-main">
+    <section id="stage" aria-label="Interactive sketch">
+      <div id="canvas-wrap"></div>
+      <div class="loading" id="loading">Loading…</div>
+    </section>
+
+    <aside id="panel" aria-label="Controls">
+      <div class="group">
+        <span class="label">Motion</span>
+        <div class="seg" id="modes">
+          <button data-mode="vertex">Vertex</button>
+          <button data-mode="magnet">Magnet</button>
+          <button data-mode="melt">Melt</button>
+          <button data-mode="shatter">Shatter</button>
+          <button data-mode="lens">Lens</button>
+          <button data-mode="wind">Wind</button>
+          <button data-mode="morph">Morph</button>
+        </div>
+        <span class="label">Draw &amp; reveal</span>
+        <div class="seg" id="modes2">
+          <button data-mode="draw">Draw</button>
+          <button data-mode="ink">Ink spread</button>
+          <button data-mode="scan">Scan</button>
+          <button data-mode="grow">Grow</button>
+          <button data-mode="redraw">Redraw</button>
+        </div>
+        <p class="hint" id="mode-hint"></p>
+      </div>
+
+      <div class="group">
+        <label class="slider"><span>Speed <output id="speed-v"></output></span>
+          <input id="speed" type="range" min="0.2" max="3" step="0.1" value="1"></label>
+        <label class="slider"><span>Intensity <output id="amount-v"></output></span>
+          <input id="amount" type="range" min="0" max="1" step="0.01" value="0.6"></label>
+        <label class="slider"><span>Noise scale <output id="noiseScale-v"></output></span>
+          <input id="noiseScale" type="range" min="0.5" max="12" step="0.5" value="3"></label>
+        <label class="slider" id="octaves-row"><span>Detail (octaves) <output id="octaves-v"></output></span>
+          <input id="octaves" type="range" min="1" max="4" step="1" value="2"></label>
+        <label class="select" id="order-row"><span>Draw order</span>
+          <select id="order">
+            <option value="center">Centre outward</option>
+            <option value="noise">Perlin blooms</option>
+            <option value="doc">As drawn</option>
+          </select></label>
+
+        <div id="magnet-opts" class="mode-opts" hidden>
+          <div class="seg" id="magnet-kind">
+            <button data-kind="repel" class="on">Repel</button>
+            <button data-kind="attract">Attract</button>
+            <button data-kind="swirl">Swirl</button>
+          </div>
+          <label class="slider"><span>Radius <output id="radius-v"></output></span>
+            <input id="radius" type="range" min="0.04" max="0.4" step="0.01" value="0.15"></label>
+          <label class="slider"><span>Springiness <output id="spring-v"></output></span>
+            <input id="spring" type="range" min="0" max="1" step="0.01" value="0.6"></label>
+          <p class="hint">Move over the drawing. Hold the mouse button to flip repel ↔ attract.</p>
+        </div>
+        <div id="lens-opts" class="mode-opts" hidden>
+          <label class="slider"><span>Lens size <output id="lensRadius-v"></output></span>
+            <input id="lensRadius" type="range" min="0.06" max="0.45" step="0.01" value="0.2"></label>
+        </div>
+        <div id="morph-opts" class="mode-opts" hidden>
+          <label class="select"><span>Morph into</span><select id="morph-target"></select></label>
+        </div>
+        <button class="btn" id="seed">New noise seed</button>
+      </div>
+
+      <div class="group">
+        <span class="label">Effects</span>
+        <label class="check"><input type="checkbox" id="glow"> Glow <kbd>G</kbd></label>
+        <div id="glow-opts" class="sub-opts" hidden>
+          <label class="slider"><span>Amount <output id="glowAmt-v"></output></span>
+            <input id="glowAmt" type="range" min="0.1" max="1" step="0.01" value="0.6"></label>
+        </div>
+        <label class="check"><input type="checkbox" id="echo"> Echo trails <kbd>E</kbd></label>
+        <div id="echo-opts" class="sub-opts" hidden>
+          <label class="slider"><span>Trail length <output id="echoAmt-v"></output></span>
+            <input id="echoAmt" type="range" min="0" max="1" step="0.01" value="0.7"></label>
+        </div>
+        <label class="check"><input type="checkbox" id="kaleido"> Kaleidoscope <kbd>K</kbd></label>
+        <div id="kaleido-opts" class="sub-opts" hidden>
+          <label class="slider"><span>Wedges <output id="wedges-v"></output></span>
+            <input id="wedges" type="range" min="4" max="16" step="2" value="8"></label>
+        </div>
+        <label class="check"><input type="checkbox" id="grain"> Paper grain &amp; ink bleed <kbd>P</kbd></label>
+        <div id="grain-opts" class="sub-opts" hidden>
+          <label class="slider"><span>Amount <output id="grainAmt-v"></output></span>
+            <input id="grainAmt" type="range" min="0.1" max="1" step="0.01" value="0.5"></label>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="row">
+          <button class="btn" id="pause">Pause</button>
+          <button class="btn" id="restart">Restart</button>
+        </div>
+        <button class="btn" id="png" hidden>Save PNG</button>
+        <div class="keys"><kbd>←</kbd><kbd>→</kbd> sketches · <kbd>↑</kbd><kbd>↓</kbd> modes · <kbd>1</kbd>–<kbd>9</kbd> modes · <kbd>Space</kbd> pause · <kbd>Esc</kbd> index</div>
+        <div class="perf" id="perf"></div>
+      </div>
+    </aside>
+  </div>
+</div>
+<button class="btn primary" id="panel-toggle" aria-expanded="false" aria-controls="panel">Play with it</button>
+
+<script src="p5.min.js"></script>
+<script src="zentangle-core.js?v=9"></script>
+<script src="player.js?v=2"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zentangles</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2213%22 fill=%22none%22 stroke=%22%231b1a17%22 stroke-width=%222.2%22/%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%225%22 fill=%22%231b1a17%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="site.css?v=2">
+<script src="config.js?v=1"></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="artist" id="artist"></div>
+  <h1 class="site-title" id="site-title"></h1>
+  <p class="tagline" id="tagline"></p>
+  <nav class="links" id="links"></nav>
+</header>
+
+<div class="toolbar">
+  <span class="count" id="count">Loading sketches…</span>
+  <span class="grow"></span>
+  <input class="search" id="search" type="search" placeholder="Search sketches" aria-label="Search sketches">
+  <a class="btn primary" id="random" href="#">Surprise me</a>
+</div>
+
+<main class="gallery" id="gallery" aria-live="polite"></main>
+<div class="empty" id="empty" hidden></div>
+
+<section class="about" id="about-section">
+  <h2>About</h2>
+  <div id="about"></div>
+</section>
+
+<script src="gallery.js?v=1"></script>
+</body>
+</html>

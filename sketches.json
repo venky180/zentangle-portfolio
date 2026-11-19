@@ -1,0 +1,75 @@
+{
+  "generated": "2026-11-19T21:21:27+00:00",
+  "sketches": [
+    {
+      "slug": "boat-race",
+      "title": "Boat Race",
+      "file": "sketches/Boat Race.svg",
+      "aspect": 0.7283,
+      "date": "2026-11-19"
+    },
+    {
+      "slug": "tornado",
+      "title": "Tornado",
+      "file": "sketches/Tornado.svg",
+      "aspect": 0.7473,
+      "date": "2026-11-19"
+    },
+    {
+      "slug": "space-leaves",
+      "title": "Space Leaves",
+      "file": "sketches/Space Leaves.svg",
+      "aspect": 0.7245,
+      "date": "2026-11-19"
+    },
+    {
+      "slug": "entente-fm",
+      "title": "Entente FM",
+      "file": "sketches/Entente_FM.svg",
+      "aspect": 0.7313,
+      "date": "2026-11-19"
+    },
+    {
+      "slug": "growth",
+      "title": "Growth",
+      "file": "sketches/Growth.svg",
+      "aspect": 0.7322,
+      "date": "2026-11-19"
+    },
+    {
+      "slug": "merry-go-round",
+      "title": "Merry Go Round",
+      "file": "sketches/Merry Go Round.svg",
+      "aspect": 0.7294,
+      "date": "2023-11-26"
+    },
+    {
+      "slug": "4d-piano",
+      "title": "4D Piano",
+      "file": "sketches/4D Piano.svg",
+      "aspect": 0.7259,
+      "date": "2023-11-26"
+    },
+    {
+      "slug": "peacock",
+      "title": "Peacock",
+      "file": "sketches/Peacock.svg",
+      "aspect": 0.7375,
+      "date": "2023-11-26"
+    },
+    {
+      "slug": "fireplace",
+      "title": "Fireplace",
+      "file": "sketches/Fireplace.svg",
+      "aspect": 0.7364,
+      "date": "2023-11-26"
+    },
+    {
+      "slug": "voronoi",
+      "title": "Voronoi",
+      "file": "sketches/Voronoi.svg",
+      "aspect": 0.7426,
+      "date": "2023-11-26"
+    }
+  ]
+}

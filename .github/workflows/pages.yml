@@ -1,0 +1,34 @@
+# Optional: publish on GitHub Pages and rebuild the sketch list automatically.
+# Push this folder to a GitHub repo, then in the repo: Settings → Pages → Source: "GitHub Actions".
+# After that, adding an SVG to sketches/ and pushing is all it takes.
+name: Publish portfolio
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Build sketch list from the sketches/ folder
+        run: python3 update_index.py --sort name
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v4
