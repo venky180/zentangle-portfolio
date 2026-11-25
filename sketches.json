@@ -1,6 +1,62 @@
 {
-  "generated": "2026-11-19T21:21:27+00:00",
+  "generated": "2026-11-25T09:57:51+00:00",
   "sketches": [
+    {
+      "slug": "sunrise",
+      "title": "Sunrise",
+      "file": "sketches/Sunrise.svg",
+      "aspect": 0.7345,
+      "date": "2026-11-25"
+    },
+    {
+      "slug": "behind-bars",
+      "title": "Behind Bars",
+      "file": "sketches/Behind Bars.svg",
+      "aspect": 0.7099,
+      "date": "2026-11-25"
+    },
+    {
+      "slug": "abyss",
+      "title": "Abyss",
+      "file": "sketches/Abyss.svg",
+      "aspect": 0.7285,
+      "date": "2026-11-25"
+    },
+    {
+      "slug": "symmetry",
+      "title": "Symmetry",
+      "file": "sketches/Symmetry.svg",
+      "aspect": 0.7495,
+      "date": "2026-11-25"
+    },
+    {
+      "slug": "big-box-store",
+      "title": "Big Box Store",
+      "file": "sketches/Big Box Store.svg",
+      "aspect": 0.7232,
+      "date": "2026-11-25"
+    },
+    {
+      "slug": "snake-head",
+      "title": "Snake Head",
+      "file": "sketches/Snake Head.svg",
+      "aspect": 0.7432,
+      "date": "2026-11-25"
+    },
+    {
+      "slug": "wavicles",
+      "title": "Wavicles",
+      "file": "sketches/Wavicles.svg",
+      "aspect": 0.7548,
+      "date": "2026-11-25"
+    },
+    {
+      "slug": "glamping",
+      "title": "Glamping",
+      "file": "sketches/Glamping.svg",
+      "aspect": 0.6982,
+      "date": "2026-11-25"
+    },
     {
       "slug": "boat-race",
       "title": "Boat Race",
