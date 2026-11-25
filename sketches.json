@@ -1,6 +1,13 @@
 {
-  "generated": "2026-11-25T10:14:23+00:00",
+  "generated": "2026-11-25T10:21:20+00:00",
   "sketches": [
+    {
+      "slug": "abyss",
+      "title": "Abyss",
+      "file": "sketches/Abyss.svg",
+      "aspect": 0.7204,
+      "date": "2026-11-25"
+    },
     {
       "slug": "sunrise",
       "title": "Sunrise",
@@ -13,13 +20,6 @@
       "title": "Behind Bars",
       "file": "sketches/Behind Bars.svg",
       "aspect": 0.7099,
-      "date": "2026-11-25"
-    },
-    {
-      "slug": "abyss",
-      "title": "Abyss",
-      "file": "sketches/Abyss.svg",
-      "aspect": 0.7285,
       "date": "2026-11-25"
     },
     {
